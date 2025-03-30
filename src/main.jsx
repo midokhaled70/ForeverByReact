@@ -4,11 +4,15 @@ import './index.css';
 import React from 'react';
 import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom'; // ✅ استخدم BrowserRouter
+import ShopContextProvider from './context/ShopContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter> {/* ✅ التصحيح هنا */}
-      <App />
+    <ShopContextProvider>
+    <App />
+    </ShopContextProvider>
+
     </BrowserRouter>
   </StrictMode>
 );
