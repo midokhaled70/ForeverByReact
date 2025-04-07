@@ -94,7 +94,7 @@ export const assets = {
     stripe_logo,
     cross_icon
 }
-
+export default assets;
 export const products = [
     {
         _id: "aaaaa",

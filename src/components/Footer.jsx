@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-import {assets}from '../assets/frontend_assets'
+import {assets}from '../assets/frontend_assets/assets'
 
 const Footer = () => {
   return (
@@ -22,8 +22,20 @@ const Footer = () => {
 <li>privacy policy</li>
   </ul>
 </div>
+
+<div>
+<p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
+<ul className='flex flex-col gap-1 text-gray-600'>
+<li>+201030840083</li>
+<li>info@midokhaled.com</li>
+</ul>
+
 </div>
 
+
+
+</div>
+<div>Copyright 2023@ Midokhaled</div>
     </div>
   )
 }
