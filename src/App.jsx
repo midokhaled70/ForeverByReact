@@ -28,6 +28,7 @@ const App = () => {
         <Route path="/orders" element={<Orders />} />
       </Routes>
       <Home/>
+      <Collection/>
       <Footer />
     </div>
   );
