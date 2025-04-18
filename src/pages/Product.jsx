@@ -56,9 +56,14 @@ setImage(item.image[0])
 <p>Select Size</p>
 <div className='flex-gap-2'>
 {productData.sizes.map((item,index)=>(
-  <button className={`border py-2 px-4 bg-gray-100 `} key={index}>{item}</button>
+  <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item===size ? 'border-orange-500':''} `} key={index}>{item}</button>
 ))}
 </div>
+</div>
+<button className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>Add To CART</button>
+<hr className='mt-8 sm:w-4/5'/>
+<div>
+  
 </div>
 </div>
 
