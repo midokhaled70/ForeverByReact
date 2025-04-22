@@ -81,7 +81,7 @@ setImage(item.image[0])
 <p>lor22
   This is a great product that offers excellent value for money.
 </p>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis eveniet officiis corrupti minus dignissimos commodi placeat deserunt fugit tempora. Recusandae quos veniam, atque voluptatem mollitia esse quo quibusdam reiciendis laudantium.</p>
+<p>Lorem ipsum dolor, sit amet consecte adipisicing elit. Omnis eveniet officiis corrupti minus dignissimos commodi placeat deserunt fugit tempora. Recusandae quos veniam, atque voluptatem mollitia esse quo quibusdam reiciendis laudantium.</p>
 
 
 </div>

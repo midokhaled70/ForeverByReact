@@ -110,8 +110,8 @@ applyFilter();
 <Title text1={'ALL '} text2={'Collections'}/>
 {/* product Sort */}
 <select onChange={(e)=>setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
-  <option value="relavant">Sort By Relevance</option>
-  <option value="Low">Sort By:Low to Hight</option>
+  <option value="relavant">Sort By Reilevance</option>
+  <option value="Low">Sort By:Loiw to Hight</option>
   <option value="Hight">Sort By : Hight to Low</option>
 </select>
 
