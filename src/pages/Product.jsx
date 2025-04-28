@@ -2,6 +2,7 @@ import React, { use, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import assets from '../assets/frontend_assets/assets';
+import RealatedProduct from '../components/RealatedProduct';
 
 const Product = () => {
   const {ProductId}=useParams();
@@ -77,7 +78,7 @@ setImage(item.image[0])
 <b className='border px-5 py-3 text-sm'>Descritions</b>
 <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
 </div>
-<div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-600 '>
+<div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500 '>
 <p>lor22
   This is a great product that offers excellent value for money.
 </p>
@@ -87,7 +88,7 @@ setImage(item.image[0])
 </div>
 
 </div>
-
+<RealatedProduct/>
     </div>
   ): <div className='opacity-0'></div>
 }
