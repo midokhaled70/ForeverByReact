@@ -88,7 +88,8 @@ setImage(item.image[0])
 </div>
 
 </div>
-<RealatedProduct/>
+<RealatedProduct category={productData.category} subCategory={productData.subCategory}/>
+
     </div>
   ): <div className='opacity-0'></div>
 }
