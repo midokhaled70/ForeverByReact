@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { products } from '../assets/frontend_assets/assets';
 
 export const ShopContext = createContext();
@@ -24,11 +24,16 @@ else{
   cartData[itemId]={};
   cartData[itemId][size]=1
 }
+setCartItems(cartData);
 }
+useEffect(()=>{
+console.log(CartItems)
+},[CartItems])
   const value = {
     products,
     currency,
     delivery_fee,search,setSearch,showSearch,setShowSearch
+    ,addToCart,CartItems
   };
 
   return (
