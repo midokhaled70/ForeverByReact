@@ -11,48 +11,63 @@ const ShopContextProvider = (props) => {
   const [showSearch, setShowSearch] = useState(false);
   const [CartItems, setCartItems] = useState({});
 
-  const addToCart = async (itemId, size) => {
+  const addToCart = (itemId, size) => {
     if (!size) {
       toast.error('Select Product Size');
       return;
     }
-    let cartData = structuredClone(CartItems);
+
+    const cartData = structuredClone(CartItems);
     if (cartData[itemId]) {
-      if (cartData[itemId][size]) {
-        cartData[itemId][size] += 1;
-      } else {
-        cartData[itemId][size] = 1;
-      }
+      cartData[itemId][size] = (cartData[itemId][size] || 0) + 1;
     } else {
-      cartData[itemId] = {};
-      cartData[itemId][size] = 1;
+      cartData[itemId] = { [size]: 1 };
     }
+
+    setCartItems(cartData);
+  };
+
+  const getCartAmount = () => {
+    let totalAmount = 0;
+
+    for (const itemId in CartItems) {
+      const itemInfo = products.find((product) => product._id === itemId);
+      if (!itemInfo) continue;
+
+      for (const size in CartItems[itemId]) {
+        const quantity = CartItems[itemId][size];
+        if (quantity > 0) {
+          totalAmount += itemInfo.price * quantity;
+        }
+      }
+    }
+
+    return totalAmount;
+  };
+
+  const getCartCount = () => {
+    let totalCount = 0;
+
+    for (const itemId in CartItems) {
+      for (const size in CartItems[itemId]) {
+        const quantity = CartItems[itemId][size];
+        if (quantity > 0) totalCount += quantity;
+      }
+    }
+
+    return totalCount;
+  };
+
+  const updateQuantity = (itemId, size, quantity) => {
+    const cartData = structuredClone(CartItems);
+    cartData[itemId][size] = quantity;
     setCartItems(cartData);
   };
 
   useEffect(() => {
-    console.log(CartItems);
+    console.log('Cart Items Updated:', CartItems);
   }, [CartItems]);
 
-  const getCartCount = () => {
-    let totalCount = 0;
-    for (const itemId in CartItems) {
-      const sizes = CartItems[itemId];
-      for (const size in sizes) {
-        const quantity = sizes[size];
-        if (quantity > 0) {
-          totalCount += quantity;
-        }
-      }
-    }
-    return totalCount;
-  };
-const updateQuantity=async(itemId,size,quantity)=>{
-let cartData =structuredClone(CartItems)
-
-cartData[itemId][size]=quantity;
-setCartItems(cartData);
-}
   const value = {
     products,
     currency,
@@ -64,7 +79,8 @@ setCartItems(cartData);
     addToCart,
     CartItems,
     getCartCount,
-    updateQuantity, // <-- expose here
+    updateQuantity,
+    getCartAmount,
   };
 
   return (
