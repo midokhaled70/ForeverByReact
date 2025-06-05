@@ -1,34 +1,35 @@
-import React, { useContext, useEffect } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import React, { useContext, useEffect, useState } from 'react';  // Added useState
+import { ShopContext } from '../context/ShopContext';
+import Title from './Title';           // Import Title component
+import ProductItem from './ProductItem'; // Import ProductItem component
 
-const RealatedProduct = ({category,subCategory}) => {
+const RealatedProduct = ({ category, subCategory }) => {
+  const { products } = useContext(ShopContext);
+  const [related, setRelated] = useState([]);
 
+  useEffect(() => {
+    if (products.length > 0) {
+      let productsCopy = products.slice();
 
-const {products}=useContext(ShopContext);
-const [related,setRelated]=useState([]);
+      productsCopy = productsCopy.filter((item) => category === item.category);
+      productsCopy = productsCopy.filter((item) => subCategory === item.subCategory);
 
-useEffect(()=>{
-if(products.length>0){
-let productsCopy=products.slice();
+      setRelated(productsCopy.slice(0, 5));
+    }
+  }, [products, category, subCategory]);  // added category and subCategory as dependencies
 
-productsCopy=productsCopy.filter((item)=>category===item.category);
-productsCopy=productsCopy.filter((item)=>subCategory===item.subCategory);
-
-setRelated(productsCopy.slice(0,5));
-}
-},[products])
   return (
-    <div className='my-24'>
-      <div className='text-center text-3xl py-2'>
-<title text1={'RElated'} text2={"Products"} />
+    <div className="my-24">
+      <div className="text-center text-3xl py-2">
+        <Title text1={'Related'} text2={'Products'} />
       </div>
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-4 gap-y-6 '>
-{related.map((item,index)=>(
-  <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image} />
-))}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-4 gap-y-6">
+        {related.map((item, index) => (
+          <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image} />
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RealatedProduct
+export default RealatedProduct;
