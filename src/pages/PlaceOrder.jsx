@@ -9,9 +9,22 @@ const PlaceOrder = () => {
   <Title text1={'DElivery'} text2={'information'}/>
 
 </div>
+
 <div className='flex gap-3'>
-<input type='text'name='' id=''/>
+
+<input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' placeholder='First name' type='text'name='' id=''/>
+<input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' placeholder='Last name' type='text'name='' id=''/>
+
 </div>
+<input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' placeholder='Email address' type='email'name='' id=''/>
+<input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' placeholder='Street' type='text'name='' id=''/>
+<div className='flex gap-3'>
+
+<input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' placeholder='First name' type='text'name='' id=''/>
+<input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' placeholder='Last name' type='text'name='' id=''/>
+
+</div>
+
       </div>
     </div>
   )
