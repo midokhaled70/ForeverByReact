@@ -11,7 +11,7 @@ event.prventDefult();
     Subscribe now & get 20% off on your first purchase
 </p>
 <p className='text-gray-400 mt-3'>
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum sapiente nulla, quis saepe explicabo sint est. Vel nisi eius, excepturi facilis in possimus, maxime et vitae autem expedita, suscipit recusandae!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esapiente nulla, quis saepe explicabo sint est. Vel nisi eius, excepturi facilis in possimus, maxime et vitae autem expedita, suscipit recusandae!
 
 </p>
 <form onSubmit={onSubmitHandler} className='w-full sm:w-1/2 flex items-center gap-3 mx:auto my-6 border pl-3'>

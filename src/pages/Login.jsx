@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <form className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
 <div className='inline-flex'>
-
+<h1>jdja d </h1>
 </div>
     </form>
   )
