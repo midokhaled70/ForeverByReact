@@ -1,2 +1,2 @@
 ## E-Commerce React Project
-**Ahmed KHaled**
+**mido KHaled**
