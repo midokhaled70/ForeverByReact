@@ -130,7 +130,7 @@ App will be available at:
 
 ## 🧑‍💻 Author
 
-👤 **Ahmed Khaled**
+👤 **mido Khaled**
 🔗 GitHub: [midokhaled70](https://github.com/midokhaled70)
 
 ---
